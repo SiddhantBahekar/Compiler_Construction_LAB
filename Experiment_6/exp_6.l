@@ -1,7 +1,7 @@
 %{
 #include <stdio.h>
 
-int stringToNumber(char str[])
+int stringtoNumber(char str[])
 {
     int num = 0;
     int i = 0;
@@ -13,7 +13,7 @@ int stringToNumber(char str[])
     return num;
 }
 
-void decimalToHex(int num)
+void deciToHex(int num)
 {
     char hex[] = "0123456789ABCDEF";
     char result[20];
@@ -45,11 +45,11 @@ void decimalToHex(int num)
 [0-9]+ {
     int num;
 
-    num = stringToNumber(yytext);
+    num = stringtoNumber(yytext);
 
     printf("Decimal: %d\n", num);
 
-    decimalToHex(num);
+    deciToHex(num);
 }
 .|\n {
     
