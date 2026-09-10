@@ -6,26 +6,25 @@
 
 %%
 
-[0-9]+      {
-                yylval = atoi(yytext);
-                return NUMBER;
-            }
+[0-9]+ {
+    yylval = atoi(yytext);
+    return NUMBER;
+}
 
-[+*]        {
-                return yytext[0];
-            }
+[+*] {
+    return yytext[0];
+}
 
-[ \t]       {
-                /* Ignore spaces and tabs */
-            }
+[ \t] {
+}
 
-\n          {
-                return '\n';
-            }
+\n {
+    return '\n';
+}
 
-.           {
-                printf("Invalid Expression: %s\n", yytext);
-            }
+. {
+    printf("Invalid Expression: %s\n", yytext);
+}
 
 %%
 
@@ -33,4 +32,3 @@ int yywrap(void)
 {
     return 1;
 }
-
