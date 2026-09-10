@@ -12,7 +12,7 @@ void yyerror(const char *s);
 
 stmt:
       stmt expr '\n'   { printf("Result: %d\n", $2); }
-    | /* empty */
+    | 
     ;
 
 expr:
