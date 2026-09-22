@@ -19,7 +19,7 @@ void yyerror(const char *s);
 %%
 
 input:
-      /* empty */
+      
     | input line
     ;
 
